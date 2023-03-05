@@ -1,6 +1,7 @@
 module com.codeclause.codeclause_pdf_splitter {
     requires javafx.controls;
     requires javafx.fxml;
+    requires itextpdf;
 
 
     opens com.codeclause.codeclause_pdf_splitter to javafx.fxml;
