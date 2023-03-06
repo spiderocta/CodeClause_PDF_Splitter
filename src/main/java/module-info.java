@@ -10,4 +10,6 @@ module com.codeclause.codeclause_pdf_splitter {
     opens com.codeclause.codeclause_pdf_splitter.handlers to javafx.fxml;
     exports com.codeclause.codeclause_pdf_splitter.ui;
     opens com.codeclause.codeclause_pdf_splitter.ui to javafx.fxml;
+    exports com.codeclause.codeclause_pdf_splitter.main;
+    opens com.codeclause.codeclause_pdf_splitter.main to javafx.fxml;
 }

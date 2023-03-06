@@ -6,8 +6,8 @@ import java.io.IOException;
 import com.itextpdf.text.pdf.PdfReader;
 
 public class PdfUtility {
-    private PdfReader pdfFile;
-    private File selectedFile;
+    private static PdfReader pdfFile;
+    private static File selectedFile;
 
     public PdfUtility(File selectedFile) throws IOException {
         this.selectedFile = selectedFile;
@@ -15,11 +15,11 @@ public class PdfUtility {
          pdfFile= new PdfReader(inputStream); pdfFile.unethicalreading = true;
     }
 
-    public PdfReader getPDFInput(){
+    public static PdfReader getPDFInput(){
         return pdfFile;
     }
 
-    public String getFilePath(){
+    public static String getFilePath(){
         String absolutePath = selectedFile.getAbsolutePath();
         String filePath = absolutePath.substring(0,absolutePath.lastIndexOf(File.separator));
         return filePath;
