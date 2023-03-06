@@ -1,7 +1,6 @@
 package com.codeclause.codeclause_pdf_splitter.listeners;
 
 import com.codeclause.codeclause_pdf_splitter.main.Main;
-import com.codeclause.codeclause_pdf_splitter.utilities.PdfUtility;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfContentByte;
@@ -34,7 +33,7 @@ public class ButtonListener implements EventHandler<ActionEvent> {
                         -
                         Integer.parseInt(endPage.getText().trim())
                         > 0
-        ) {// if( start < end )
+        ) {
 
             System.out.println("Error");
 
@@ -49,9 +48,8 @@ public class ButtonListener implements EventHandler<ActionEvent> {
         }
 
     }
-
     public FileOutputStream createOutputStream() {
-        String outputPath = Main.pdfUtility.getFilePath() + "\\splitted.pdf";
+        String outputPath = Main.pdfUtility.getFilePath() + "\\outputFile.pdf";
         FileOutputStream outputStream = null;
         try {
             outputStream = new FileOutputStream(outputPath);
@@ -60,7 +58,6 @@ public class ButtonListener implements EventHandler<ActionEvent> {
         }
         return outputStream;
     }
-
     public void outputPdf(int start, int end, Document document, FileOutputStream outputStream) {
         PdfWriter writer = null;
         try {
